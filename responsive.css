@@ -1,0 +1,178 @@
+/* ==========================================================================
+   ApexFinance - Mobile-First Responsive Stylesheet
+   Breakpoints: Large Desktop (>1200px), Laptop (<1024px), Tablet (<768px), Mobile (<640px)
+   ========================================================================== */
+
+/* Show/Hide Helpers */
+.mobile-only { display: none !important; }
+.desktop-only { display: block !important; }
+
+/* --------------------------------------------------------------------------
+   1. Laptop & Small Desktop Breakpoint (max-width: 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 240px;
+  }
+
+  .main-wrapper {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .mobile-only {
+    display: flex !important;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .charts-section {
+    flex-direction: column;
+  }
+
+  .flex-2, .flex-1 {
+    width: 100%;
+  }
+
+  .top-search-box {
+    width: 240px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Tablet Breakpoint (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .top-navbar {
+    padding: 0 1.25rem;
+  }
+
+  .top-search-box {
+    display: none; /* Accessible via mobile search button if needed or expanded */
+  }
+
+  .welcome-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .banner-actions {
+    width: 100%;
+  }
+
+  .banner-actions button {
+    flex: 1;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .toolbar-row-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .toolbar-actions {
+    width: 100%;
+  }
+
+  .toolbar-actions button {
+    flex: 1;
+  }
+
+  .filters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Mobile Screen Breakpoint (max-width: 640px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-value {
+    font-size: 1.5rem;
+  }
+
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-reset-group {
+    grid-column: 1 / -1;
+  }
+
+  /* Table Mobile Adaptations */
+  .transaction-table th.th-drag,
+  .transaction-table td.cell-drag,
+  .transaction-table th[data-sort="payment"],
+  .transaction-table td.cell-payment {
+    display: none;
+  }
+
+  .transaction-table th, 
+  .transaction-table td {
+    padding: 0.75rem 0.65rem;
+    font-size: 0.825rem;
+  }
+
+  .tx-desc {
+    max-width: 140px;
+  }
+
+  .modal-backdrop {
+    padding: 0.75rem;
+  }
+
+  .modal-card {
+    max-height: 95vh;
+  }
+
+  .modal-header {
+    padding: 1rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .modal-footer {
+    padding: 0.75rem 1rem;
+  }
+
+  .toast-container {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .toast {
+    min-width: 100%;
+  }
+}
